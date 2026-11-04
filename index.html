@@ -129,7 +129,7 @@ function render(){
 }
 function renderAdmin(){
  const b=$("adminBox");b.hidden=!adminOpen;if(!adminOpen)return;
- if(!isAdmin){b.innerHTML='<div class="panel"><b>Owner login required</b><p class="mu">Admin tools unlock when you open this page signed in to Claude as the site owner or an invited editor.</p></div>';return}
+ if(!isAdmin){b.innerHTML='<div class="panel"><b>Owner login required</b><p class="mu">.</p></div>';return}
  if(!live){b.innerHTML='<div class="panel"><p class="mu">Database unavailable in this view.</p></div>';return}
  const e=editing||{};
  b.innerHTML=`<div class="panel"><h3>${e.id?"Edit item":"Add menu item"}</h3>

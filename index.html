@@ -15,7 +15,7 @@ a{color:inherit}button,.btn{font:500 14px 'DM Sans',sans-serif;cursor:pointer;bo
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:8;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;background:#0d0d0dee;backdrop-filter:blur(8px);border-bottom:1px solid var(--bd)}
 .logo{font:500 28px Caveat,cursive;color:var(--ac);text-decoration:none}
 .nav nav{display:flex;gap:18px;font-size:14px}.nav nav a{text-decoration:none;color:var(--mu);padding:4px 0}.nav nav a.on{color:var(--tx);border-bottom:1px solid var(--ac)}
-@media(max-width:700px){.nav{flex-wrap:wrap}.nav nav{order:3;width:100%;justify-content:space-between}}
+@media(max-width:700px){.nav{flex-wrap:wrap}.nav nav{order:3;width:100%;justify-content:flex-start;gap:14px;overflow-x:auto;white-space:nowrap;padding:4px 0}.nav nav a{flex:0 0 auto}}
 .wrap{max-width:1120px;margin:0 auto;padding:64px 24px}.alt{background:var(--alt)}
 .hero{min-height:82vh;display:flex;align-items:flex-end;position:relative;border-bottom:1px solid var(--ac);background:linear-gradient(135deg,#292012,#090909) center/cover}
 .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0000 20%,#000c)}
@@ -43,6 +43,7 @@ input,select,textarea{width:100%;font:inherit;padding:10px;border:1px solid var(
 footer{background:#080808;border-top:1px solid var(--bd);padding:48px 20px 24px}
 .fg{max-width:1000px;margin:0 auto;display:grid;gap:28px;grid-template-columns:1.2fr 1fr 1.2fr 1.2fr;font-size:14px}@media(max-width:700px){.fg{grid-template-columns:1fr 1fr}.hero{min-height:74vh}.it img,.ph{height:170px}.gal{grid-template-columns:1fr 1fr;grid-auto-rows:135px}.gal .big{grid-row:span 2}.gal .wide{grid-column:1/3}}
 .fg a{display:block;text-decoration:none;color:var(--mu)}.fg p{margin:4px 0;color:var(--mu)}
+.postcard-art{height:190px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;background:linear-gradient(135deg,#6b4b2b,#d4af37 55%,#efe0b0);color:#20170b;font:500 27px Caveat,cursive}.postcard-art.alt1{background:linear-gradient(135deg,#183b35,#8aa58c);color:#f7ecd1}.postcard-art.alt2{background:linear-gradient(135deg,#4b2631,#c78c75);color:#fff0df}.map-frame{width:100%;height:360px;border:1px solid var(--bd);border-radius:14px;display:block;background:var(--card)}.review-form{max-width:720px}.review-form textarea{min-height:120px}.section-intro{max-width:650px}.postcard-card .b{min-height:145px}
 .copy{max-width:1000px;margin:28px auto 0;padding-top:16px;border-top:1px solid var(--bd);font-size:12px;color:var(--mu)}
 .fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25D366;color:#fff;font-weight:500;border-radius:99px;padding:12px 18px;text-decoration:none;box-shadow:0 6px 20px #000a;z-index:9}
 h2:after{content:"";display:block;width:48px;height:1px;background:var(--ac);margin:14px 0 0}.cta h2:after{margin:14px auto 22px}.cta h2{margin-bottom:0}
@@ -56,7 +57,7 @@ h2:after{content:"";display:block;width:48px;height:1px;background:var(--ac);mar
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style></head><body>
 <header class="nav"><a class="logo" href="#home">Empire Cafe</a>
-<nav><a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">About</a><a href="#reservations">Reservations</a></nav>
+<nav><a href="#home">Home</a><a href="#menu">Menu</a><a href="#postcards">Postcards</a><a href="#about">About</a><a href="#location">Location</a><a href="#reviews">Reviews</a><a href="#reservations">Reservations</a></nav>
 <div><a class="btn sm" href="#reservations">Book a table</a> <button class="g sm" id="adminBtn">Owner</button></div></header>
 <div class="wrap" id="adminBox" hidden style="padding-bottom:0"></div>
 
@@ -72,6 +73,34 @@ h2:after{content:"";display:block;width:48px;height:1px;background:var(--ac);mar
 
 <div data-p="menu"><div class="wrap"><small class="k">Menu</small><h2>Our <em>menu</em></h2><div class="cats" id="cats"></div><div class="grid" id="grid"></div><p class="note" id="status"></p></div></div>
 
+<div data-p="postcards"><section class="wrap">
+<small class="k">Souvenirs from Kandy</small><h2>Empire Cafe <em>postcards</em></h2>
+<p class="mu section-intro">Take home a little memory of Kandy. Choose a postcard design below and contact us on WhatsApp to check availability and price.</p>
+<div class="cards">
+<article class="it postcard-card"><div class="postcard-art">Kandy<br>Heritage</div><div class="b"><h3>Kandy Heritage</h3><p class="mu">A keepsake inspired by the city of Kandy.</p><div class="row"><span class="chip">Souvenir postcard</span><span class="pr">Price on request</span></div><div class="adm"><a class="btn sm" href="#" data-postcard="Kandy Heritage">Order via WhatsApp</a></div></div></article>
+<article class="it postcard-card"><div class="postcard-art alt1">Sri Lanka<br>Memories</div><div class="b"><h3>Sri Lanka Memories</h3><p class="mu">A small reminder of your time in Sri Lanka.</p><div class="row"><span class="chip">Souvenir postcard</span><span class="pr">Price on request</span></div><div class="adm"><a class="btn sm" href="#" data-postcard="Sri Lanka Memories">Order via WhatsApp</a></div></div></article>
+<article class="it postcard-card"><div class="postcard-art alt2">Empire Cafe<br>Kandy</div><div class="b"><h3>Empire Cafe Kandy</h3><p class="mu">A special keepsake from your visit to Empire Cafe.</p><div class="row"><span class="chip">Cafe postcard</span><span class="pr">Price on request</span></div><div class="adm"><a class="btn sm" href="#" data-postcard="Empire Cafe Kandy">Order via WhatsApp</a></div></div></article>
+</div><p class="note">These are starter postcard designs. Replace them with your actual postcard photos and prices before publishing.</p>
+</section></div>
+
+<div data-p="location"><section class="wrap">
+<small class="k">Find us</small><h2>Visit <em>Empire Cafe</em></h2>
+<p class="mu">Temple St, Kandy, Sri Lanka · Located in Olde Empire</p>
+<iframe class="map-frame" title="Empire Cafe location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Temple%20St%2C%20Kandy%2C%20Sri%20Lanka&output=embed"></iframe>
+<div class="adm"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Temple%20St%2C%20Kandy%2C%20Sri%20Lanka" target="_blank" rel="noopener">Get directions on Google Maps</a></div>
+</section></div>
+
+<div data-p="reviews"><section class="wrap">
+<small class="k">Your experience</small><h2>Guest <em>comments</em></h2>
+<p class="mu section-intro">We would love to hear about your visit. Share your feedback with our team.</p>
+<div class="panel review-form" style="margin-top:22px">
+<label for="rvn">Your name</label><input id="rvn" maxlength="80" placeholder="Name">
+<label for="rvr">Your rating</label><select id="rvr"><option value="5">★★★★★ — Excellent</option><option value="4">★★★★☆ — Very good</option><option value="3">★★★☆☆ — Good</option><option value="2">★★☆☆☆ — Fair</option><option value="1">★☆☆☆☆ — Poor</option></select>
+<label for="rvc">Your comments</label><textarea id="rvc" maxlength="1000" placeholder="Tell us about your experience..."></textarea>
+<div class="adm" style="margin-top:14px"><button id="reviewSend">Send comments</button></div>
+<p class="note" id="reviewMsg">Feedback is sent to the cafe via WhatsApp. It is not published publicly on this website.</p>
+</div></section></div>
+
 <div data-p="about"><section class="wrap split"><div><small class="k">Our story</small><h2 style="margin:10px 0 16px">Food worth <em>gathering</em> around</h2><p data-t="about"></p><p class="mu" data-t="hours"></p><br><a class="btn" href="#reservations">Book a table</a></div><div class="ph1" data-img="about"></div></section></div>
 
 <div data-p="reservations"><div class="wrap" style="max-width:640px"><small class="k">Reservations</small><h2>Reserve a <em>table</em></h2><p class="mu">Send your request on WhatsApp. We will confirm shortly.</p>
@@ -81,7 +110,7 @@ h2:after{content:"";display:block;width:48px;height:1px;background:var(--ac);mar
 <div class="adm" style="margin-top:16px"><button id="bk" style="background:#25D366;color:#fff">Book via WhatsApp</button></div><p class="note" id="bm"></p></div></div></div>
 
 <footer><div class="fg"><div><a class="logo" href="#home" style="display:block">Empire Cafe</a><p data-t="tag"></p></div>
-<div><small class="k">Explore</small><a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">About</a><a href="#reservations">Reservations</a></div>
+<div><small class="k">Explore</small><a href="#home">Home</a><a href="#menu">Menu</a><a href="#postcards">Postcards</a><a href="#about">About</a><a href="#location">Location</a><a href="#reviews">Guest comments</a><a href="#reservations">Reservations</a></div>
 <div><small class="k">Visit</small><p data-t="addr"></p><p data-t="phone"></p><p data-t="email"></p></div>
 <div><small class="k">Hours</small><p data-t="hours"></p><small class="k">Follow</small><a id="ig" target="_blank" rel="noopener" hidden>Instagram</a></div></div>
 <div class="copy">© 2026 Empire Cafe</div></footer>
@@ -95,10 +124,10 @@ const SAMPLE=[
 {id:"s3",name:"Greek Salad",category:"Starters",price:28,desc:"Feta, olives, cucumber",emoji:"🥗",photo:"https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85"},
 {id:"s4",name:"Hummus & Warm Bread",category:"Starters",price:22,desc:"Chickpea, tahini, olive oil",emoji:"🫓",photo:"https://images.unsplash.com/photo-1577906096429-f73c2c312435?auto=format&fit=crop&w=900&q=85"},
 {id:"s5",name:"Fresh Lemon Mint",category:"Drinks",price:16,desc:"Crushed ice, fresh mint",emoji:"🍋",photo:"https://images.unsplash.com/photo-1513558161293-c7047eecab14?auto=format&fit=crop&w=900&q=85"}];
-const PAGES=["home","menu","about","reservations"],
+const PAGES=["home","menu","postcards","about","location","reviews","reservations"],
 FIELDS=[["tag","Tagline"],["addr","Address"],["phone","Phone"],["email","Email"],["hours","Opening hours"],["ig","Instagram link"],["about","About text"]],
 SLOTS=[["hero","Hero photo"],["about","About photo"],["g1","Gallery 1 (large)"],["g2","Gallery 2"],["g3","Gallery 3"],["g4","Gallery 4 (wide)"]],
-DEF={tag:"Coffee, food and good moments, made fresh every day.",hours:"Daily 12:00 – 23:00",about:"At Empire Cafe, good food and good company belong together. Every dish is prepared fresh in our kitchen with ingredients we trust, served with care."};
+DEF={tag:"Coffee, food and good moments, made fresh every day.",addr:"Temple St, Kandy, Sri Lanka",hours:"Daily 12:00 – 23:00",about:"At Empire Cafe, good food and good company belong together. Every dish is prepared fresh in our kitchen with ingredients we trust, served with care."};
 const DEFAULT_IMGS={
  hero:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=88",
  about:"https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=85",
@@ -129,7 +158,7 @@ function render(){
 }
 function renderAdmin(){
  const b=$("adminBox");b.hidden=!adminOpen;if(!adminOpen)return;
- if(!isAdmin){b.innerHTML='<div class="panel"><b>Owner login required</b><p class="mu">.</p></div>';return}
+ if(!isAdmin){b.innerHTML='<div class="panel"><b>Owner login required</b><p class="mu">Admin tools unlock when you open this page signed in to Claude as the site owner or an invited editor.</p></div>';return}
  if(!live){b.innerHTML='<div class="panel"><p class="mu">Database unavailable in this view.</p></div>';return}
  const e=editing||{};
  b.innerHTML=`<div class="panel"><h3>${e.id?"Edit item":"Add menu item"}</h3>
@@ -168,7 +197,23 @@ document.addEventListener("click",async e=>{
  else if(t.id==="seed"){for(const s of SAMPLE)await db.collection("menu").add(strip(s))}
  else if(t.id==="infoSave"){FIELDS.forEach(([k])=>S.info[k]=$("i_"+k).value.trim());saveSite().catch(()=>{})}
  else if(t.id==="waSave"){S.wa=digits($("wn").value);saveSite().catch(()=>{})}
- else if(t.id==="bk"){const n=digits(S.wa),m=$("bm"),v=id=>$(id).value.trim();
+ else if(t.dataset.postcard){
+   const n=digits(S.wa);
+   if(!n){alert("WhatsApp ordering is not set up yet. Please contact the cafe directly.");return}
+   const url="https://wa.me/"+n+"?text="+encodeURIComponent("Hello Empire Cafe, I am interested in ordering the postcard: "+t.dataset.postcard+". Please let me know the availability and price.");
+   window.open(url,"_blank");
+  }
+  else if(t.id==="reviewSend"){
+   const n=digits(S.wa),name=$("rvn").value.trim(),rating=$("rvr").value,comment=$("rvc").value.trim(),m=$("reviewMsg");
+   if(!name||!comment){m.textContent="Please enter your name and comments.";return}
+   if(!n){m.textContent="WhatsApp feedback is not set up yet. Please contact the cafe directly.";return}
+   const stars="★".repeat(Number(rating))+"☆".repeat(5-Number(rating));
+   const msg="Hello Empire Cafe, here is my feedback.\\nName: "+name+"\\nRating: "+stars+"\\nComments: "+comment;
+   const url="https://wa.me/"+n+"?text="+encodeURIComponent(msg);
+   m.innerHTML='Opening WhatsApp to send your feedback… <a href="'+url+'" target="_blank" rel="noopener" style="color:var(--ac)">Tap here if it did not open</a>';
+   window.open(url,"_blank");
+  }
+  else if(t.id==="bk"){const n=digits(S.wa),m=$("bm"),v=id=>$(id).value.trim();
   if(!v("bn")||!v("bd")||!v("bt")){m.textContent="Please enter your name, date and time.";return}
   if(!n){m.textContent="WhatsApp booking is not set up yet. Please call us instead.";return}
   const txt=`Hello Empire Cafe, I would like to book a table.\nName: ${v("bn")}\nPhone: ${v("bp")}\nDate: ${v("bd")}\nTime: ${v("bt")}\nGuests: ${v("bg")}`+(v("bo")?`\nNotes: ${v("bo")}`:""),
